@@ -1,0 +1,80 @@
+package newPackage;
+import org.openqa.selenium.WebDriver;
+//import org.openqa.selenium.firefox.FirefoxDriver;
+//import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import java.util.List;
+public class myClass {
+    public static void main(String[] args) throws InterruptedException {
+        // Declaring and instantiating objects/variables
+    	WebDriver driver=new ChromeDriver();
+    	driver.manage().window().maximize();
+		//WebDriver driver = new FirefoxDriver();
+		//System.setProperty("webdriver.chrome.driver","G:\\chromedriver.exe");
+    	
+        String testUrl = "https://www.autohero.com/de/search/";
+        String expectedTitle = "Premium Gebrauchtwagen Angebote | AutoHero.com";
+        String actualTitle = "";
+        //String expectedFilter = "Erstzulassung von: 2015";
+        //String actualFilter = "";
+        
+
+        // launch Fire fox and direct it to the Base URL
+        driver.get(testUrl);
+        // get the actual value of the title
+        actualTitle = driver.getTitle();
+        
+        //Filter for First registration (Erstzulassung) from 2015
+        Select erstzulassungAb = new Select(driver.findElement(By.name("yearRange.min")));
+        driver.findElement(By.xpath("/html/body/div[1]/div/main/div[4]/div/div[1]/div/div/div/div[3]/div[1]")).click();
+        erstzulassungAb.selectByVisibleText("2015");
+        
+        //Print the values before sorting to compare
+        List<WebElement> tdList = driver.findElements(By.xpath("/html/body/div[1]/div/main/div[4]/div/div[2]/div/div[3]/div/div[1]"));
+		String strArray[] = new String[tdList.size()];
+		for(int i =0;i<tdList.size();i++)
+		{
+			System.out.println(tdList.get(i).getText());
+			strArray[i]=tdList.get(i).getText();
+		}
+        
+        //Sort cars by Price Descending (Höchster Preis)
+        Select sortiertNach = new Select(driver.findElement(By.name("sort")));
+        sortiertNach.selectByVisibleText("Höchster Preis");
+        Thread.sleep(5000);
+        
+        //Verify all cars are filtered by first registration (2015+)
+        for (int i = 0; i < strArray.length; i++) 
+		{
+			for (int j = i + 1; j < strArray.length; j++) 
+			{
+				if (strArray[i].compareTo(strArray[j])>0) 
+				{
+					temp = strArray[i];
+					strArray[i] = strArray[j];
+					strArray[j] = temp;
+				}
+			}
+		}
+        
+        //Verify all cars are sorted by price descending
+        
+        
+        
+        /*
+        //comparing the actual title of the page with the expected one and print the result as "Passed" or "Failed"
+        if (actualTitle.contentEquals(expectedTitle)){
+            System.out.println("Test Passed!");
+        } else {
+            System.out.println("Test Failed");
+        }
+       	*/
+        //close the browser
+        driver.close();
+       
+    }
+
+}
