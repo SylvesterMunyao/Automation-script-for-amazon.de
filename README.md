@@ -1,4 +1,5 @@
 #### Lingoda-QA-Test
+This is an automation test script, written in Java for https://www.amazon.de/
 Location of the code:  Lingoda-QA-Test/qaTask/src/taskPackage/taskClass.java 
 
 Pre-requisites:
