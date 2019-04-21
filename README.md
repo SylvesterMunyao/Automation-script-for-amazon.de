@@ -1,6 +1,6 @@
 #### Lingoda-QA-Test
 - This is an automation test script, written in Java for https://www.amazon.de/
-- Location of the code:  Lingoda-QA-Test/qaTask/src/taskPackage/taskClass.java 
+- Code:  Lingoda-QA-Test/qaTask/src/taskPackage/taskClass.java 
 
 Pre-requisites:
 1. Selenium WebDriver installed (install Java, Eclipse IDE and configure the IDE with webdriver). Follow the link below for steps on how to: https://www.guru99.com/installing-selenium-webdriver.html
