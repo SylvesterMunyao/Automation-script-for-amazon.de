@@ -1,3 +1,8 @@
+/*
+ * Task: Create automation test for amazon.de
+ * Authored by Sylvester Kitaka Munyao
+ * Date: 21th March 2019
+*/
 package taskPackage;
 
 import static org.junit.Assert.assertTrue;
