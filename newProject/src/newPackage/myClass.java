@@ -1,6 +1,6 @@
 /*
  * Task: Create automation test for search functionality of a German car web site
- * Authored by Sylvester Kitaka Munyao!!!
+ * Authored by Sylvester Kitaka Munyao
  * Date: 21th March 2019
 */
 package newPackage;
@@ -31,9 +31,9 @@ public class myClass {
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/main/div[4]/div/div[1]/div/div/div/div[3]/div[1]/span")).click();
         erstzulassungAb.selectByVisibleText(Integer.toString(baseFilterYear));
         
-        //Sort cars by Price Descending (Höchster Preis)
+        //Sort cars by Price Descending (HÃ¶chster Preis)
         Select sortiertNach = new Select(driver.findElement(By.name("sort")));
-        sortiertNach.selectByVisibleText("Höchster Preis");
+        sortiertNach.selectByVisibleText("HÃ¶chster Preis");
         Thread.sleep(5000);
         
         List<WebElement> tdList = driver.findElements(By.className("item___T1IPF"));
