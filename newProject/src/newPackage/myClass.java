@@ -68,7 +68,7 @@ public class myClass {
         		}
         	}	
 		}		
-        //close the browser
+        //close the browser 
         driver.close();      
     }
 }
