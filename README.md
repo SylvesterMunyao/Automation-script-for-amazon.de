@@ -3,7 +3,8 @@
 - Code:  Lingoda-QA-Test/qaTask/src/taskPackage/taskClass.java 
 
 Pre-requisites:
-1. Selenium WebDriver installed (install Java, Eclipse IDE and configure the IDE with webdriver). Follow the link below for steps on how to: https://www.guru99.com/installing-selenium-webdriver.html
+1. Selenium WebDriver installed (install Java, Eclipse IDE and configure the IDE with webdriver). 
+More about that: https://www.guru99.com/installing-selenium-webdriver.html
 2. After setting up the IDE, load the project and then click the Run button.
 
 Steps followed in the test script
